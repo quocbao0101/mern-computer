@@ -2,12 +2,14 @@ import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import b3 from '../../assets/images/b3.webp';
 
 const useStyles = makeStyles(() => ({
+  image: {
+    minHeight: 600,
+    background: `url(${b3}) no-repeat`,
+    backgroundSize: '100% 100%',
+    marginBottom: 50,
+  },
   menu: {
     paddingInline: '10%',
-    backgroundImage: `url(${b3})`,
-    backgroundRepeat: 'no-repeat',
-    width: '100%',
-    minHeight: 600,
   },
   root: {
     position: 'relative',
@@ -121,19 +123,29 @@ export const theme = createMuiTheme({
   overrides: {
     MuiTabs: {
       indicator: {
-        backgroundColor: '#fff',
+        backgroundColor: '#ff7e00',
+        display: 'none',
       },
       root: {
       },
     },
     MuiTab: {
+      fontSize: 18,
+      color: '#fff',
+      textTransform: 'none',
       root: {
-        padding: 10,
+        '&.MuiTab-wrapped': {
+          fontSize: 18,
+          textTransform: 'none',
+        },
         '&.Mui-selected': {
           backgroundColor: '#ff7e00',
           color: '#fff',
           borderRadius: 5,
-          padding: 10,
+          fontWeight: 0,
+        },
+        '&.MuiTab-root': {
+          padding: '20px 30px',
         },
       },
     },
