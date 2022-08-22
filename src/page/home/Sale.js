@@ -3,8 +3,9 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { MuiThemeProvider } from '@material-ui/core';
-import TabPanel from './TabPanel';
+import TabPanel from '../../components/TabPanel';
 import { SalesStyles, theme } from './style';
+import TabPages from '../../components/TabPages';
 
 const props = (index) => ({
   id: `wrapped-tab-${index}`,
@@ -27,21 +28,20 @@ export default function Sale() {
         >
           <Tab
             value="one"
-            label="GIÁ SỐC TRONG NGÀY, Cập nhật liên tục"
-            wrapped
+            label="Giá sốc trong ngày"
             {...props('one')}
           />
           <Tab value="two" label="Item Two" {...props('two')} />
           <Tab value="three" label="Item Three" {...props('three')} />
         </Tabs>
         <TabPanel value={value} index="one">
-          Item One
+          <TabPages />
         </TabPanel>
         <TabPanel value={value} index="two">
-          Item Two
+          <TabPages />
         </TabPanel>
         <TabPanel value={value} index="three">
-          Item Three
+          <TabPages />
         </TabPanel>
       </MuiThemeProvider>
     </Paper>
